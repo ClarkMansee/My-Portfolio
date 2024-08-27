@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
 html{
-    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .progress-bar{
@@ -270,7 +274,7 @@ body{
     }
 
     .dynamic-text li span::after {
-        left: 0.5rem; /* Adjust the position for smaller screens */
+        left: 0.5rem; 
     }
 
     .introduction {
@@ -284,6 +288,29 @@ body{
     }
 }
 
+@media (max-width: 768px) {
+    .top-text {
+        font-size: 5vw; 
+    }
+    .middle-text {
+        font-size: 5.5vw;
+    }
+    .desc-text .static-text,
+    .dynamic-text li {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-text,
+    .middle-text,
+    .desc-text .static-text,
+    .dynamic-text li {
+        font-size: 4vw;
+    }
+}
+
+/* Main .about Styles */
 .about {
     height: auto;
     background-color: #333333;
@@ -291,7 +318,7 @@ body{
     color: white;
 }
 
-.about h1{
+.about h1 {
     color: white;
     display: flex;
     justify-content: center;
@@ -300,8 +327,8 @@ body{
     margin: 0 auto 50px auto;
 }
 
-.about-content{
-    margin: 50px auto 50px auto;
+.about-content {
+    margin: 50px auto;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -309,7 +336,7 @@ body{
     width: 100%;
 }
 
-.about-description{
+.about-description {
     text-align: justify;
     width: 50%;
     font-size: 20px;
@@ -321,26 +348,13 @@ body{
     object-fit: cover;
 }
 
-@media (max-width: 1000px){
-    .about-img img{
-        width: 100%;
-    }
-    .about-content{
-        flex-direction: column;
-        align-items: center;
-    }
-    .about-description{
-        width: 100%;
-    }
-}
-
-.about .scroll{
+.about .scroll {
     width: 100%;
     display: flex;
     overflow: hidden;
 }
 
-.about .scroll div{
+.about .scroll div {
     color: #000;
     font-size: 4em;
     background: #fff;
@@ -351,14 +365,76 @@ body{
     animation-delay: -40s;
 }
 
-.about .scroll div:nth-child(2){
+.about .scroll div:nth-child(2) {
     animation: animate2 40s linear infinite;
     animation-delay: -20s;
 }
-.about .scroll div span{
+
+.about .scroll div span {
     -webkit-text-stroke: 2px #000;
     color: transparent;
 }
+
+
+@media (max-width: 1024px) {
+    .about-content{
+        column-gap: 0rem;        
+    }
+    .about-description {
+        font-size: 18px;
+    }
+    .about-img img {
+        width: 70%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        column-gap: 0;
+    }
+    .about-description, .about-img img {
+        width: 90%; 
+    }
+    .about .scroll div {
+        font-size: 3em; 
+    }
+}
+
+@media (max-width: 600px) {
+    .about h1 {
+        font-size: 1.5em; 
+    }
+    .about-description {
+        width: 95%;
+        font-size: 16px;
+    }
+    .about-img img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about h1 {
+        margin-bottom: 20px;
+    }
+    .about-description, .about-img img {
+        width: 100%; 
+    }
+    .about .scroll div {
+        font-size: 2.5em;
+    }
+    .about-description {
+        font-size: 13px; 
+    }
+    .about-img img {
+        height: 300px; 
+        object-fit: cover; 
+    }
+}
+
+
 
 @keyframes animate{
     0%{
